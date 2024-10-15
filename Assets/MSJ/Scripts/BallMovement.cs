@@ -32,10 +32,4 @@ public class BallMovement : MonoBehaviour
             direction.x = -direction.x; 
         }
     }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-    }
-
-
 }
