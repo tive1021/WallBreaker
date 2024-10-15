@@ -1,39 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Properties;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.U2D;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
-    private Rigidbody2D move_rb;
+    private float moveSpeed = 5f;
+    float x = 0;
 
-    private float moveDirection;
+    private Rigidbody2D move_rb;
+    private Vector3 paddle_pos;
 
 
     private void Start()
     {
-        move_rb = GetComponent<Rigidbody2D>();
+        paddle_pos = transform.position;
     }
 
     private void Update()
     {
-        moveDirection = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            moveDirection = moveSpeed  * Time.deltaTime;
-        }
-        if(Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            moveDirection = moveSpeed * Time.deltaTime ;
-        }
-        this.transform.Translate(new Vector3(moveDirection,0,0));   
+        x = Input.GetAxis("Horizontal");
     }
 
-    private void Move()
+    private void FixedUpdate()
     {
-        move_rb.velocity = new Vector2(moveDirection * moveSpeed, move_rb.velocity.y);
+        PaddleMove();
+    }
+
+    private void PaddleMove()
+    {
+        paddle_pos.x += x * moveSpeed * Time.deltaTime;
+        paddle_pos.x = Mathf.Clamp(paddle_pos.x, -3f, 3f);
+        transform.position = paddle_pos;    
     }
 }
