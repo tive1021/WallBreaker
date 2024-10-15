@@ -223,6 +223,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5875053072922418843, guid: 46ef6fec44b7463489646a2d510c64db, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7119924757902317639, guid: 46ef6fec44b7463489646a2d510c64db, type: 3}
       propertyPath: m_Name
       value: Paddle
