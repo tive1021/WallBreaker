@@ -26,12 +26,6 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isCollider)
-        {
-            return;
-        }
-        isCollider = true;
-
         Vector2 collisionNormal = collision.contacts[0].normal;
 
         // 수직 충돌 (위쪽 또는 아래쪽 충돌)
@@ -48,7 +42,6 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        isCollider = false;
     }
 
 
