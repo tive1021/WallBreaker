@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class BallMovement : MonoBehaviour
 {
@@ -10,14 +8,11 @@ public class BallMovement : MonoBehaviour
     [SerializeField] private float speed = 1f;
     private Vector2 direction = new Vector2(1, 1).normalized;
 
-
-    // Start is called before the first frame update
     void Awake()
     {
         _rb2d = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         _rb2d.velocity = direction * speed;
@@ -25,12 +20,7 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // 예시: 벽과 충돌하면 반대 방향으로 이동
-        if (collision.gameObject.CompareTag("Brick"))
-        {
-            direction = -direction;  // 방향 반전
-        }
+        Vector2 collisionNormal = collision.contacts[0].normal;
+        direction = Vector2.Reflect(direction, collisionNormal).normalized; 
     }
-
-
 }
