@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2848942145141468296}
   - component: {fileID: 5875053072922418843}
   - component: {fileID: 1490945879000151762}
-  - component: {fileID: 4266359187237145000}
+  - component: {fileID: 6622078512263330971}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Untagged
@@ -159,7 +159,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4266359187237145000
+--- !u!114 &6622078512263330971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
