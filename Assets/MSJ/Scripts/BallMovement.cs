@@ -19,6 +19,20 @@ public class BallMovement : MonoBehaviour
     }
 
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Vector2 collisionNormal = collision.contacts[0].normal;
+
+        if (Mathf.Abs(collisionNormal.y) > Mathf.Abs(collisionNormal.x))
+        {
+            direction.y = -direction.y;
+        }
+        else if (Mathf.Abs(collisionNormal.x) > Mathf.Abs(collisionNormal.y))
+        {
+            direction.x = -direction.x; 
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
     }
