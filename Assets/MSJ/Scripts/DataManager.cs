@@ -5,7 +5,7 @@ using UnityEngine;
 public class DataManager : MonoBehaviour
 {
     public static DataManager dataManager { get; private set; }
-    public int currentScore = 0;
+    public int currentScore = 10;
     public int highScore { get; private set; }
 
     private void Awake()
