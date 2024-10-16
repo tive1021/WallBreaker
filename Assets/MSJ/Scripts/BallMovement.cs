@@ -21,6 +21,11 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("BottomWall"))
+        {
+            FindObjectOfType<GameOver>().IsGameOver();
+            return;
+        }
         Vector2 collisionNormal = collision.contacts[0].normal;
 
         if (Mathf.Abs(collisionNormal.y) > Mathf.Abs(collisionNormal.x))
