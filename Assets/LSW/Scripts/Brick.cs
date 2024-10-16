@@ -8,7 +8,7 @@ public class Brick : MonoBehaviour
     {
         DataManager.dataManager.currentScore++;
         DestroyBrick();
-        Clear.Instance.OnBrickDestroyed(); 
+        //Clear.Instance.OnBrickDestroyed(); 
     }
 
     void DestroyBrick()

@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
-    public GameObject ball;
+    public GameObject gameOver;
 
-    void Update()
+    public void IsGameOver()
     {
-        if (ball.transform.position.y <= -5f)
-        {
-            IsGameOver();
-        }
-    }
-
-    private void IsGameOver()
-    {
-        
+        Time.timeScale = 0f;
+        gameOver.SetActive(true);
     }
 }

@@ -35,7 +35,7 @@ public class DataManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentScore > highScore)
+        if (currentScore > highScore)
         {
             PlayerPrefs.SetInt(nameof(highScore), currentScore);
             highScore = currentScore;
