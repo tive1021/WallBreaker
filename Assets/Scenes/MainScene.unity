@@ -558,6 +558,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paddle
       objectReference: {fileID: 0}
+    - target: {fileID: 4130555631427040950, guid: 46ef6fec44b7463489646a2d510c64db, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8176374203453560785, guid: 46ef6fec44b7463489646a2d510c64db, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
@@ -814,6 +818,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3950759527028080913, guid: 2a44cae3da4588441b069ef6cbef800b, type: 3}
       propertyPath: m_Name
+      value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 3950759527028080913, guid: 2a44cae3da4588441b069ef6cbef800b, type: 3}
+      propertyPath: m_TagString
       value: Ball
       objectReference: {fileID: 0}
     m_RemovedComponents: []
