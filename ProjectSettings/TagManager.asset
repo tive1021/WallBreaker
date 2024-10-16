@@ -8,6 +8,7 @@ TagManager:
   - Brick
   - Ball
   - BottomWall
+  - GameOverUI
   layers:
   - Default
   - TransparentFX

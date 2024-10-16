@@ -36,8 +36,6 @@ public class Level : MonoBehaviour
        
         ballMovement.IncreaseSpeed(speedMultiplier);
 
-        gameManager.AddRowOfBricks();
-
         Debug.Log($"Level {level} reached! Clear count: {clearCount}");
     }
 }

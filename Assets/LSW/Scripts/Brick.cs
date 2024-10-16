@@ -6,9 +6,11 @@ public class Brick : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        DataManager.dataManager.currentScore++;
+        if (DataManager.Instance != null)
+        {
+            DataManager.Instance.AddScore(1); // 점수 1점 추가
+        }
         DestroyBrick();
-        //Clear.Instance.OnBrickDestroyed(); 
     }
 
     void DestroyBrick()

@@ -1,44 +1,88 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DataManager : MonoBehaviour
 {
-    public static DataManager dataManager { get; private set; }
-    public int currentScore = 10;
-    public int highScore { get; private set; }
+    public static DataManager Instance { get; private set; }
+    public int CurrentScore { get; private set; }
+    public int HighScore { get; private set; }
+
+    public Text CurrentScoreTextInGame;
+    public Text HighScoreTextInGame;
+    public Text CurrentScoreTextGameOver;
+    public Text HighScoreTextGameOver;
 
     private void Awake()
     {
-        if (dataManager == null)
+        if (Instance == null)
         {
-            dataManager = this;
+            Instance = this;
         }
         else
         {
-            Destroy(gameObject);
-        }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (!PlayerPrefs.HasKey(nameof(highScore)))
-        {
-            PlayerPrefs.SetInt(nameof(highScore), 0);
-        }
-        else
-        {
-            highScore = PlayerPrefs.GetInt(nameof(highScore));
+            Destroy(gameObject);  
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        if (currentScore > highScore)
+        LoadHighScore();  
+        ReinitializeInGameUI();  
+        UpdateScoreUI();
+    }
+
+    public void AddScore(int score)
+    {
+        CurrentScore += score;
+        UpdateHighScore();
+        UpdateScoreUI();
+    }
+
+    public void ResetScore()
+    {
+        CurrentScore = 0;
+        UpdateScoreUI();
+    }
+
+    public void UpdateHighScore()
+    {
+        if (CurrentScore > HighScore)
         {
-            PlayerPrefs.SetInt(nameof(highScore), currentScore);
-            highScore = currentScore;
+            HighScore = CurrentScore;
+            PlayerPrefs.SetInt("HighScore", HighScore);
+            PlayerPrefs.Save();
         }
+    }
+
+    public void LoadHighScore()
+    {
+        HighScore = PlayerPrefs.GetInt("HighScore", 0);
+    }
+
+    public void UpdateScoreUI()
+    {
+        if (CurrentScoreTextInGame != null)
+            CurrentScoreTextInGame.text = CurrentScore.ToString();
+
+        if (HighScoreTextInGame != null)
+            HighScoreTextInGame.text = HighScore.ToString();
+
+        if (CurrentScoreTextGameOver != null)
+            CurrentScoreTextGameOver.text = CurrentScore.ToString();
+
+        if (HighScoreTextGameOver != null)
+            HighScoreTextGameOver.text = HighScore.ToString();
+    }
+
+    public void ReinitializeInGameUI()
+    {
+        CurrentScoreTextInGame = GameObject.Find("BackGround/Canvas/Score/CurrentScoreTextInGame")?.GetComponent<Text>();
+        HighScoreTextInGame = GameObject.Find("BackGround/Canvas/HighScoreText/HighScoreTextInGame")?.GetComponent<Text>();
+    }
+
+    public void ReinitializeGameOverUI()
+    {
+        CurrentScoreTextGameOver = GameObject.Find("GameOverUI/Canvas/CurrentScoreTextUI/CurrentScoreTextGameOver")?.GetComponent<Text>();
+        HighScoreTextGameOver = GameObject.Find("GameOverUI/Canvas/HighScoreTextUI/HighScoreTextGameOver")?.GetComponent<Text>();
     }
 }

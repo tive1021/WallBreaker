@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2238874693227876148
+--- !u!1 &3858442028712832428
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5592036575618131734}
-  - component: {fileID: 3714655401104322061}
-  - component: {fileID: -5524437978124229752}
+  - component: {fileID: 2239782517064972128}
+  - component: {fileID: 9055861803757244544}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -18,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5592036575618131734
+--- !u!4 &2239782517064972128
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2238874693227876148}
+  m_GameObject: {fileID: 3858442028712832428}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,34 +32,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3714655401104322061
+--- !u!114 &9055861803757244544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2238874693227876148}
+  m_GameObject: {fileID: 3858442028712832428}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de789e8b46fce4b208e763e9632522a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wallPrefab: {fileID: 8672749372923854709, guid: fa26fd6fc79a8f04ba9c15f80892e861, type: 3}
-  startPosition: {x: -2.4, y: 4.3}
-  columns: 9
-  rows: 5
-  xSpacing: 0.6
-  ySpacing: 0.3
---- !u!114 &-5524437978124229752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2238874693227876148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4256ca5b8cba4db482f9477ab88735d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ball: {fileID: 3950759527028080913, guid: 2a44cae3da4588441b069ef6cbef800b, type: 3}
+  ballPrefab: {fileID: 3950759527028080913, guid: 2a44cae3da4588441b069ef6cbef800b, type: 3}
+  gameOverUI: {fileID: 0}
