@@ -31,6 +31,16 @@ public class BallMovement : MonoBehaviour
         {
             direction.x = -direction.x; 
         }
+
+        if (collision.gameObject.CompareTag("Brick"))
+        {
+            SoundManager.Instance.BrickPop();
+        }
+        else
+        {
+            SoundManager.Instance.BallPop();
+        }
+
     }
 
     public void IncreaseSpeed(float multiplier)
