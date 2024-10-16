@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PaddleMovement : MonoBehaviour
 {
     public float moveSpeed;
     private Rigidbody2D move_rb;
