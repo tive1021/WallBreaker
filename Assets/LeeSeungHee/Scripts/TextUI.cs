@@ -27,12 +27,6 @@ public class TextUI : MonoBehaviour
 
     public int GetHighScore()
     {
-        return PlayerPrefs.GetInt(nameof(DataManager.dataManager.highScore), 
-            DataManager.dataManager.currentScore);
+        return DataManager.dataManager.highScore;
     }
-
-
-
-
-
 }
