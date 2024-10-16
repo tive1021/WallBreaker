@@ -36,7 +36,6 @@ public class Level : MonoBehaviour
        
         ballMovement.IncreaseSpeed(speedMultiplier);
 
-        // 벽돌 한 줄 추가
         gameManager.AddRowOfBricks();
 
         Debug.Log($"Level {level} reached! Clear count: {clearCount}");

@@ -32,4 +32,10 @@ public class BallMovement : MonoBehaviour
             direction.x = -direction.x; 
         }
     }
+
+    public void IncreaseSpeed(float multiplier)
+    {
+        speed *= multiplier;
+        _rb2d.velocity = direction * speed; 
+    }
 }

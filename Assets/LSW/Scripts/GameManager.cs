@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void AddRowOfBricks()
+    {
+        rows++;
+        GenerateWalls();
+    }
+
     void Start()
     {
         GenerateWalls();
