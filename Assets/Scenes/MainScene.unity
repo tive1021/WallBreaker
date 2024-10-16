@@ -558,6 +558,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paddle
       objectReference: {fileID: 0}
+    - target: {fileID: 4130555631427040950, guid: 46ef6fec44b7463489646a2d510c64db, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8176374203453560785, guid: 46ef6fec44b7463489646a2d510c64db, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
@@ -611,20 +615,8 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3067186475015286182, guid: a06543c5d9a2d4a46a3d646839b1c365, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
     - target: {fileID: 3450272496628676665, guid: a06543c5d9a2d4a46a3d646839b1c365, type: 3}
       propertyPath: m_Name
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450272496628676665, guid: a06543c5d9a2d4a46a3d646839b1c365, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 6691576305270696429, guid: a06543c5d9a2d4a46a3d646839b1c365, type: 3}
-      propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6886893899115439009, guid: a06543c5d9a2d4a46a3d646839b1c365, type: 3}
@@ -666,14 +658,6 @@ PrefabInstance:
     - target: {fileID: 6886893899115439009, guid: a06543c5d9a2d4a46a3d646839b1c365, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8030000981587639678, guid: a06543c5d9a2d4a46a3d646839b1c365, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 8158244844900132982, guid: a06543c5d9a2d4a46a3d646839b1c365, type: 3}
-      propertyPath: m_TagString
-      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -814,6 +798,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3950759527028080913, guid: 2a44cae3da4588441b069ef6cbef800b, type: 3}
       propertyPath: m_Name
+      value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 3950759527028080913, guid: 2a44cae3da4588441b069ef6cbef800b, type: 3}
+      propertyPath: m_TagString
       value: Ball
       objectReference: {fileID: 0}
     m_RemovedComponents: []
