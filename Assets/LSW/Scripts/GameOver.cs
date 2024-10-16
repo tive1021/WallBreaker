@@ -5,10 +5,11 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
     public GameObject ball;
+    public GameObject gameOver;
 
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (ball.transform.position.y <= -5f)
+        if (collision.gameObject.CompareTag("BottomWall"))
         {
             IsGameOver();
         }
@@ -16,6 +17,7 @@ public class GameOver : MonoBehaviour
 
     private void IsGameOver()
     {
-        
+        Time.timeScale = 0f;
+        gameOver.SetActive(true);
     }
 }
