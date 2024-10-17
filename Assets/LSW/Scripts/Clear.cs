@@ -24,18 +24,4 @@ public class Clear : MonoBehaviour
     {
         totalBricks = FindObjectsOfType<Brick>().Length;
     }
-
-    public void OnBrickDestroyed()
-    {
-        totalBricks--;
-        if (totalBricks <= 0)
-        {
-            GameClear();
-        }
-    }
-
-    private void GameClear()
-    {
-     
-    }
 }

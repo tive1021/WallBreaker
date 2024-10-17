@@ -4,7 +4,8 @@ public class ItemInfo : MonoBehaviour
 {
     public enum ItemType { ScaleModifier, BallAdder }
     public ItemType itemType;
-    public GameObject ballPrefab; 
+    public GameObject ballPrefab;
+    public GameObject paddle;
 
  
     public Vector2 fixedBallSpawnPosition = new Vector2(0f, 0f); 
@@ -39,10 +40,9 @@ public class ItemInfo : MonoBehaviour
         }
     }
 
-
     void AddBall()
     {
-       
         Instantiate(ballPrefab, fixedBallSpawnPosition, Quaternion.identity);
+        GameManager.Instance.IncreaseBallCount();
     }
 }

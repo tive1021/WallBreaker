@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Brick : MonoBehaviour
@@ -8,13 +6,15 @@ public class Brick : MonoBehaviour
     {
         if (DataManager.Instance != null)
         {
-            DataManager.Instance.AddScore(1); // 점수 1점 추가
+            DataManager.Instance.AddScore(1);
         }
+
         DestroyBrick();
     }
 
     void DestroyBrick()
     {
+        GameManager.Instance.OnBrickDestroyed();
         Destroy(gameObject);
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DataManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class DataManager : MonoBehaviour
     public Text HighScoreTextInGame;
     public Text CurrentScoreTextGameOver;
     public Text HighScoreTextGameOver;
+    public Text ClearCurrentScore;
+    public Text ClearHighScore;
 
     private void Awake()
     {
@@ -26,8 +29,8 @@ public class DataManager : MonoBehaviour
 
     void Start()
     {
-        LoadHighScore();  
-        ReinitializeInGameUI();  
+        LoadHighScore();
+        ReinitializeInGameUI();
         UpdateScoreUI();
     }
 
@@ -72,6 +75,13 @@ public class DataManager : MonoBehaviour
 
         if (HighScoreTextGameOver != null)
             HighScoreTextGameOver.text = HighScore.ToString();
+
+        if (ClearCurrentScore != null)
+            ClearCurrentScore.text = CurrentScore.ToString();
+
+        if (ClearHighScore != null)
+            ClearHighScore.text = HighScore.ToString();
+
     }
 
     public void ReinitializeInGameUI()
@@ -80,9 +90,11 @@ public class DataManager : MonoBehaviour
         HighScoreTextInGame = GameObject.Find("BackGround/Canvas/HighScoreText/HighScoreTextInGame")?.GetComponent<Text>();
     }
 
-    public void ReinitializeGameOverUI()
+    public void ReinitializeSetFalseUI()
     {
-        CurrentScoreTextGameOver = GameObject.Find("GameOverUI/Canvas/CurrentScoreTextUI/CurrentScoreTextGameOver")?.GetComponent<Text>();
-        HighScoreTextGameOver = GameObject.Find("GameOverUI/Canvas/HighScoreTextUI/HighScoreTextGameOver")?.GetComponent<Text>();
+        CurrentScoreTextGameOver = GameObject.Find("UI/GameOverUI/Canvas/CurrentScoreTextUI/CurrentScoreTextGameOver")?.GetComponent<Text>();
+        HighScoreTextGameOver = GameObject.Find("UI/GameOverUI/Canvas/HighScoreTextUI/HighScoreTextGameOver")?.GetComponent<Text>();
+        ClearCurrentScore = GameObject.Find("UI/StageClearUI/Canvas/CurrentScoreText/ClearCurrentScore")?.GetComponent<Text>();
+        ClearHighScore = GameObject.Find("UI/StageClearUI/Canvas/HighScoreText/ClearHighScore")?.GetComponent<Text>();
     }
 }

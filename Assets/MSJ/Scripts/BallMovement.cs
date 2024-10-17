@@ -16,22 +16,25 @@ public class BallMovement : MonoBehaviour
 
     void Start()
     {
-        gameManager = GameManager.Instance;
+        gameManager = GameManager.Instance;       
     }
 
     void FixedUpdate()
     {
-        _rb2d.velocity = direction * speed;
+        if (_rb2d != null)  
+        {
+            _rb2d.velocity = direction * speed;
+        }
     }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("BottomWall"))
         {
-            gameManager.GameOver();
-            return;
+            Destroy(gameObject);
+            GameManager.Instance.DecreaseBallCount();
         }
+
         Vector2 collisionNormal = collision.contacts[0].normal;
 
         if (Mathf.Abs(collisionNormal.y) > Mathf.Abs(collisionNormal.x))
@@ -40,7 +43,7 @@ public class BallMovement : MonoBehaviour
         }
         else if (Mathf.Abs(collisionNormal.x) > Mathf.Abs(collisionNormal.y))
         {
-            direction.x = -direction.x; 
+            direction.x = -direction.x;
         }
 
         if (collision.gameObject.CompareTag("Brick"))
@@ -51,12 +54,15 @@ public class BallMovement : MonoBehaviour
         {
             SoundManager.Instance.BallPop();
         }
-
     }
 
     public void IncreaseSpeed(float multiplier)
     {
         speed *= multiplier;
-        _rb2d.velocity = direction * speed; 
+
+        if (_rb2d != null)
+        {
+            _rb2d.velocity = direction * speed;
+        }
     }
 }

@@ -7,7 +7,6 @@ using UnityEngine;
 public class IgnoreBall : MonoBehaviour
 {
 
-    // 공이 추가 됐을때, 공끼리 충돌 방지용 * tag "Ball" 인것만 적용 됨
     private void Start()
     {
         GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");

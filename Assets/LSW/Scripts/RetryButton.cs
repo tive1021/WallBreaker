@@ -25,8 +25,7 @@ public class RetryButton : MonoBehaviour
             DataManager.Instance.ResetScore();  
             DataManager.Instance.ReinitializeInGameUI();  
         }
-
-        Debug.Log("Game restarted after retry");
     }
 
+    
 }
