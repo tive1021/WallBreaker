@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class BallMovement : MonoBehaviour
@@ -15,14 +16,15 @@ public class BallMovement : MonoBehaviour
 
     void Start()
     {
+        _rb2d.velocity = direction * speed;
     }
 
     void FixedUpdate()
     {
-        if (_rb2d != null)  
-        {
-            _rb2d.velocity = direction * speed;
-        }
+    //    if (_rb2d != null)  
+    //    {
+    //        _rb2d.velocity = direction * speed;
+    //    }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -35,14 +37,37 @@ public class BallMovement : MonoBehaviour
 
         Vector2 collisionNormal = collision.contacts[0].normal;
 
-        if (Mathf.Abs(collisionNormal.y) > Mathf.Abs(collisionNormal.x))
+        Vector2 reflectedDirection = Vector2.Reflect(direction, collisionNormal).normalized;
+
+        float horizontalAngle = Vector2.Angle(reflectedDirection, Vector2.up);
+
+        if (horizontalAngle > 60f && horizontalAngle < 90f)
         {
-            direction.y = -direction.y;
+            float sign = Mathf.Sign(reflectedDirection.y);
+            float angleInRadians = Mathf.Deg2Rad * 30f;
+            reflectedDirection = new Vector2(reflectedDirection.x, Mathf.Sin(angleInRadians) * sign).normalized;
         }
-        else if (Mathf.Abs(collisionNormal.x) > Mathf.Abs(collisionNormal.y))
-        {
-            direction.x = -direction.x;
-        }
+
+        direction = reflectedDirection;
+        _rb2d.velocity = direction * speed;
+
+        //direction = Vector2.Reflect(direction, collisionNormal).normalized;
+
+        //if (Mathf.Abs(collisionNormal.y) > Mathf.Abs(collisionNormal.x))
+        //{
+        //    direction.y = -direction.y;
+        //    //Debug.Log($"{gameObject.GetInstanceID()}, {direction}");
+        //    //Debug.Break();
+        //    _rb2d.MovePosition(collision.contacts[0].point);
+
+        //}
+        //else if (Mathf.Abs(collisionNormal.x) > Mathf.Abs(collisionNormal.y))
+        //{
+        //    direction.x = -direction.x;
+        //    //Debug.Log($"{gameObject.GetInstanceID()}, {direction}");
+        //    _rb2d.MovePosition(collision.contacts[0].point);
+        //}
+        
 
         if (collision.gameObject.CompareTag("Brick"))
         {
