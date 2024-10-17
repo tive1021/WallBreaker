@@ -473,9 +473,61 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: wallPrefab
+      value: 
+      objectReference: {fileID: 2823971178047088916, guid: f4c9559efa6644408bee424d24b49e2f, type: 3}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: brickPrefab
+      value: 
+      objectReference: {fileID: 2823971178047088916, guid: f4c9559efa6644408bee424d24b49e2f, type: 3}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
       propertyPath: ballMovement
       value: 
       objectReference: {fileID: -8572858335169445174, guid: 2a44cae3da4588441b069ef6cbef800b, type: 3}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: brickPrefabs.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: brickPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 2823971178047088916, guid: f4c9559efa6644408bee424d24b49e2f, type: 3}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: brickPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 2823971178047088916, guid: b75b35a3e6f8741c2ab7d37e0d6e05a6, type: 3}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: brickPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2823971178047088916, guid: 25d8d66ed377f4ab78778ab761b6072b, type: 3}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: brickPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 2823971178047088916, guid: 8895b471fad3d4c3e8e6b561f9b16c08, type: 3}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: brickPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 2823971178047088916, guid: 06f2b76b6371146e59b7974f2fab2aa6, type: 3}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: brickPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 2823971178047088916, guid: bc5c8d6232b3f437187059fa3b844f19, type: 3}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: brickPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 2823971178047088916, guid: 855e710371e384a23b536a75c1542d6f, type: 3}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: brickPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 2823971178047088916, guid: a326b1c7a1ce34675852ba022ab9c2b2, type: 3}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: brickPrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 2823971178047088916, guid: 76fbe8fddf1a646c3bfe72a40b51ea5e, type: 3}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: brickPrefabs.Array.data[9]
+      value: 
+      objectReference: {fileID: 2823971178047088916, guid: d02d2d6a51e234d888916c991940ea77, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

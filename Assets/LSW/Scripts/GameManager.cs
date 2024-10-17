@@ -4,7 +4,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public GameObject wallPrefab;
+
+    public GameObject[] brickPrefabs;  
     public GameObject ballPrefab;
     public GameObject gameOverUI;
     public GameObject stageClearUI;
@@ -167,10 +168,10 @@ public class GameManager : MonoBehaviour
     
     private void GenerateWalls(int level)
     {
-        Vector2 startPosition = new Vector2(-2.5f, 4.3f);
+        Vector2 startPosition = new Vector2(-2.5f, 4.1f);
         int columns = 9; 
         int rows = 5 + (level - 1);  
-        float xSpacing = 0.6f;
+        float xSpacing = 0.7f;
         float ySpacing = 0.3f;
 
         for (int row = 0; row < rows; row++)
@@ -182,7 +183,9 @@ public class GameManager : MonoBehaviour
                     break;
 
                 Vector2 spawnPosition = new Vector2(xPos, startPosition.y - (row * ySpacing));
-                Instantiate(wallPrefab, spawnPosition, Quaternion.identity);
+
+                int randomIndex = Random.Range(0, brickPrefabs.Length);  
+                Instantiate(brickPrefabs[randomIndex], spawnPosition, Quaternion.identity);
             }
         }
     }
