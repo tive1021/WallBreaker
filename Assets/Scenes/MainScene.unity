@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HighScoreText
       objectReference: {fileID: 0}
+    - target: {fileID: 7569177574297653370, guid: d9b169482e8deb849b6e206545904433, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5611553721580597695, guid: d9b169482e8deb849b6e206545904433, type: 3}
@@ -1228,6 +1232,10 @@ PrefabInstance:
     - target: {fileID: 4130555631427040950, guid: 46ef6fec44b7463489646a2d510c64db, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5875053072922418843, guid: 46ef6fec44b7463489646a2d510c64db, type: 3}
+      propertyPath: m_Mass
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8176374203453560785, guid: 46ef6fec44b7463489646a2d510c64db, type: 3}
       propertyPath: m_LocalPosition.x
