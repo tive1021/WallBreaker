@@ -35,6 +35,7 @@ public class BallMovement : MonoBehaviour
             GameManager.Instance.DecreaseBallCount();
         }
 
+        //reflect ¶û material2D Æ®·¯ºí½´ÆÃ
         Vector2 collisionNormal = collision.contacts[0].normal;
 
         Vector2 reflectedDirection = Vector2.Reflect(direction, collisionNormal).normalized;
