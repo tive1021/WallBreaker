@@ -145,30 +145,18 @@ public class GameManager : MonoBehaviour
         currentLevel++;  
         LevelUI.Instance.UpdateLevelUI(currentLevel);
 
-        RemoveAllBalls();
-
-        InitializeGame();
-
         if (ballMovement != null)
         {
             ballMovement.IncreaseSpeed(1.2f); 
         }
-    }
 
-    private void RemoveAllBalls()
-    {
-        GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
-
-        foreach (GameObject ball in balls)
-        {
-            Destroy(ball);
-        }
+        InitializeGame();
     }
 
     private void GenerateWalls(int level)
     {
-        Vector2 startPosition = new Vector2(-2.5f, 4.3f);
-        int columns = 1; 
+        Vector2 startPosition = new Vector2(-2.5f, 4.3f); 
+        int columns = 9; 
         int rows = 5 + (level - 1);  
         float xSpacing = 0.6f;
         float ySpacing = 0.3f;
