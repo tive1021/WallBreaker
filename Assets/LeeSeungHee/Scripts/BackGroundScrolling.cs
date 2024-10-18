@@ -22,11 +22,17 @@ public class BackGroundScrolling : MonoBehaviour
 
     private void Update()
     {
+        Time.timeScale = 1f;
+        Scrolling();
+    }
+
+    public void Scrolling()
+    {
         Vector3 curPos = transform.position;
         Vector3 nextPos = Vector3.left * speed * Time.deltaTime;
         transform.position = curPos + nextPos;
 
-        if (sprites[endIndex].position.x < viewWidth *(-1))
+        if (sprites[endIndex].position.x < viewWidth * (-1))
         {
             Vector3 backSpritePos = sprites[startIndex].position;
             Vector3 frontSpritePos = sprites[endIndex].position;
@@ -36,9 +42,8 @@ public class BackGroundScrolling : MonoBehaviour
             int startIndexSave = startIndex;
             startIndex = endIndex;
             endIndex = startIndexSave;
-            
-        }
 
+        }
 
     }
 }

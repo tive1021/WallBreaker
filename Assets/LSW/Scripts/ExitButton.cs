@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ExitButton : MonoBehaviour
 {
     public void OnExitButtonClicked()
-    {
+    { 
         SceneManager.LoadScene("IntroScene");
         Time.timeScale = 1f;
     }

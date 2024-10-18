@@ -9,4 +9,9 @@ public class StartButton : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
+
+    public void OnInfinityButtonClick()
+    {
+        SceneManager.LoadScene("InfinityModeScene");
+    }
 }
