@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ItemManager : MonoBehaviour
 {
@@ -25,10 +26,18 @@ public class ItemManager : MonoBehaviour
 
     void SpawnRandomItem()
     {
-        int randomIndex = Random.Range(0, items.Length);
-        float randomX = Random.Range(minX, maxX); 
-        Vector2 spawnPosition = new Vector2(randomX, fixedY); 
+        float randomX = Random.Range(minX, maxX);
+        Vector2 spawnPosition = new Vector2(randomX, fixedY);
 
-        Instantiate(items[randomIndex], spawnPosition, Quaternion.identity);
+        if (SceneManager.GetActiveScene().name == "InfinityModeScene")
+        {
+            Instantiate(items[1], spawnPosition, Quaternion.identity);
+        }
+        else
+        {
+            int randomIndex = Random.Range(0, items.Length);
+            Instantiate(items[randomIndex], spawnPosition, Quaternion.identity);
+        }
     }
+
 }

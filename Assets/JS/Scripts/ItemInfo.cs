@@ -1,4 +1,8 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
+
+
 
 public class ItemInfo : MonoBehaviour
 {
@@ -7,7 +11,6 @@ public class ItemInfo : MonoBehaviour
     public GameObject ballPrefab;
     public GameObject paddle;
 
- 
     public Vector2 fixedBallSpawnPosition = new Vector2(0f, 0f); 
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -40,9 +43,17 @@ public class ItemInfo : MonoBehaviour
         }
     }
 
-    void AddBall()
+    public void AddBall()
     {
         Instantiate(ballPrefab, fixedBallSpawnPosition, Quaternion.identity);
-        GameManager.Instance.IncreaseBallCount();
+
+        if (SceneManager.GetActiveScene().name == "MainScene")
+        {
+            GameManager.Instance.IncreaseBallCount();
+        }
+        else if (SceneManager.GetActiveScene().name == "InfinityModeScene")
+        {
+            InfinityModeManager.Instance.IncreaseBallCount();
+        }
     }
 }

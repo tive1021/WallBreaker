@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallMovement : MonoBehaviour
 {
@@ -32,7 +33,15 @@ public class BallMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("BottomWall"))
         {
             Destroy(gameObject);
-            GameManager.Instance.DecreaseBallCount();
+
+            if (SceneManager.GetActiveScene().name == "MainScene")
+            {
+                GameManager.Instance.DecreaseBallCount();
+            }
+            else if (SceneManager.GetActiveScene().name == "InfinityModeScene")
+            {
+                InfinityModeManager.Instance.DecreaseBallCount();
+            }
         }
 
         Vector2 collisionNormal = collision.contacts[0].normal;

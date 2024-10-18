@@ -12,20 +12,25 @@ public class RetryButton : MonoBehaviour
 
     private IEnumerator ReinitializeAfterSceneLoad()
     {
-        SceneManager.LoadScene("MainScene");
-        yield return null; 
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        string nextScene = currentSceneName == "MainScene" ? "MainScene" : "InfinityModeScene";
 
-        if (GameManager.Instance != null)
+        SceneManager.LoadScene(nextScene);
+        yield return null;  
+
+        if (nextScene == "MainScene" && GameManager.Instance != null)
         {
             GameManager.Instance.InitializeGame();
+        }
+        else if (nextScene == "InfinityModeScene" && InfinityModeManager.Instance != null)
+        {
+            InfinityModeManager.Instance.InitializeGame();
         }
 
         if (DataManager.Instance != null)
         {
-            DataManager.Instance.ResetScore();  
-            DataManager.Instance.ReinitializeInGameUI();  
+            DataManager.Instance.ResetScore();
+            DataManager.Instance.ReinitializeInGameUI();
         }
     }
-
-    
 }
