@@ -684,6 +684,8 @@ MonoBehaviour:
 
     BREAKER'
   delay: 0.5
+  animator: {fileID: 836430580}
+  animatorParameter: IsWrote
 --- !u!1 &913829312
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +891,7 @@ GameObject:
   - component: {fileID: 1664449712}
   - component: {fileID: 1664449711}
   - component: {fileID: 1664449710}
-  - component: {fileID: 1664449709}
+  - component: {fileID: 1664449713}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -917,18 +919,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -3}
   m_SizeDelta: {x: 5, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1664449709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664449707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c7d283ae03ca4855b8799fc01ef82bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1664449710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,9 +963,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1664449709}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
-        m_MethodName: OnStartButtonClick
+      - m_Target: {fileID: 1664449713}
+        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
+        m_MethodName: OnQuitButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1023,6 +1013,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664449707}
   m_CullTransparentMesh: 1
+--- !u!114 &1664449713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664449707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36be148e7ca7d4137b916b7693b39c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1734131126
 GameObject:
   m_ObjectHideFlags: 0
