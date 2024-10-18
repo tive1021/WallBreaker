@@ -473,6 +473,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
+      propertyPath: paddle
+      value: 
+      objectReference: {fileID: 1461016087}
+    - target: {fileID: 9055861803757244544, guid: 068fc724d9440479f9bfadac1d8b06fc, type: 3}
       propertyPath: wallPrefab
       value: 
       objectReference: {fileID: 2823971178047088916, guid: f4c9559efa6644408bee424d24b49e2f, type: 3}
@@ -1366,6 +1370,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46ef6fec44b7463489646a2d510c64db, type: 3}
+--- !u!1 &1461016087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4130555631427040950, guid: 46ef6fec44b7463489646a2d510c64db, type: 3}
+  m_PrefabInstance: {fileID: 1461016086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1651517072 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6522946437388629867, guid: d9b169482e8deb849b6e206545904433, type: 3}

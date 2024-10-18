@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.VirtualTexturing.Debugging;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour
     private GameObject currentBall;
     public BallMovement ballMovement;
     public Button nextStageButton;
+    public GameObject paddle;
+    public Vector3 paddleInitialScale = new Vector3(1.4f, 1.4f, 1f);
+
 
     private int brickCount;
     public int currentLevel = 1;
@@ -147,7 +151,7 @@ public class GameManager : MonoBehaviour
         LevelUI.Instance.UpdateLevelUI(currentLevel);
 
         RemoveAllBalls();
-
+        ResetPaddleSize();
         InitializeGame();
 
         if (ballMovement != null)
@@ -165,7 +169,18 @@ public class GameManager : MonoBehaviour
             Destroy(ball);
         }
     }
-    
+
+    private void ResetPaddleSize()
+    {
+        if (paddle != null)
+        {
+            paddle.transform.localScale = paddleInitialScale; 
+        }
+        else
+        {
+            Debug.LogError("Paddle is not assigned in the GameManager.");
+        }
+    }
     private void GenerateWalls(int level)
     {
         Vector2 startPosition = new Vector2(-2.5f, 4.1f);
