@@ -35,6 +35,7 @@ public class InfinityModeManager : MonoBehaviour
 
     public void InitializeGame()
     {
+        float randomX = Random.Range(-2.5f, 2.5f);
         Time.timeScale = 1f;
 
         if (gameOverUI != null)
@@ -49,7 +50,7 @@ public class InfinityModeManager : MonoBehaviour
 
         GenerateInitialWalls();  
 
-        currentBall = Instantiate(ballPrefab, new Vector2(0, -2), Quaternion.identity);
+        currentBall = Instantiate(ballPrefab, new Vector2(randomX, -2), Quaternion.identity);
         ballMovement = currentBall.GetComponent<BallMovement>();
 
         ballCount = 1;

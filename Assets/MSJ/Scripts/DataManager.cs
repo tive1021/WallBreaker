@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class DataManager : MonoBehaviour
 {
@@ -83,6 +82,15 @@ public class DataManager : MonoBehaviour
             ClearHighScore.text = HighScore.ToString();
 
     }
+
+    public void ResetHighScore()
+    {
+        HighScore = 0;
+        PlayerPrefs.SetInt("HighScore", HighScore);
+        PlayerPrefs.Save();
+        UpdateScoreUI();
+    }
+
 
     public void ReinitializeInGameUI()
     {
