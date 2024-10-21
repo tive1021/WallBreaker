@@ -38,11 +38,6 @@ public class GameManager : MonoBehaviour
     {
         ReinitializeGameObjects();
         InitializeGame();
-
-        if (nextStageButton != null)
-        {
-            nextStageButton.onClick.AddListener(OnNextStageButtonClicked);
-        }
     }
 
     public void ReinitializeGameObjects()
@@ -175,10 +170,6 @@ public class GameManager : MonoBehaviour
         if (paddle != null)
         {
             paddle.transform.localScale = paddleInitialScale; 
-        }
-        else
-        {
-            Debug.LogError("Paddle is not assigned in the GameManager.");
         }
     }
     private void GenerateWalls(int level)

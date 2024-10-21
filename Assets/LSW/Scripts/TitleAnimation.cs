@@ -4,9 +4,11 @@ using UnityEngine.UI;
 
 public class TitleAnimation : MonoBehaviour
 {
-    public Text title;  
+    public Text title;
     public string fullText = "BRICK\nBREAKER";
     public float delay = 0.5f;
+    public Animator animator; 
+    public string animatorParameter = "IsWrote"; 
 
     private string currentText = "";
 
@@ -21,7 +23,9 @@ public class TitleAnimation : MonoBehaviour
         {
             currentText = fullText.Substring(0, i);
             title.text = currentText;
-            yield return new WaitForSeconds(delay);  
+            yield return new WaitForSeconds(delay);
         }
+
+        animator.SetBool(animatorParameter, true);
     }
 }
